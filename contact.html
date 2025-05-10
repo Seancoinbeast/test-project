@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - East Meets West</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Contact Page Specific Styles */
+        .contact-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/contact-header.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 40vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        
+        .contact-header h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .contact-section {
+            padding: 80px 5%;
+        }
+        
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .contact-form {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+        .contact-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #1d3557;
+            position: relative;
+        }
+        
+        .contact-section h2:after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background-color: #e63946;
+            bottom: -10px;
+            left: 0;
+        }
+        
+        .contact-info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+        
+        .contact-info-item i {
+            font-size: 1.5rem;
+            color: #e63946;
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+        
+        .contact-info-item div h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            color: #1d3557;
+        }
+        
+        .contact-info-item div p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .social-links {
+            display: flex;
+            margin-top: 30px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #f1faee;
+            border-radius: 50%;
+            margin-right: 15px;
+            color: #1d3557;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: #e63946;
+            color: white;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #1d3557;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .form-row .form-group {
+            flex: 1;
+        }
+        
+        .submit-btn {
+            background-color: #e63946;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .submit-btn:hover {
+            background-color: #c1121f;
+        }
+        
+        .map-section {
+            padding: 0 5% 80px;
+        }
+        
+        .map-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            height: 450px;
+            background-color: #e9ecef;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .map-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #1d3557;
+            color: white;
+            font-size: 1.2rem;
+        }
+        
+        .hours-section {
+            background-color: #f8f9fa;
+            padding: 80px 5%;
+            text-align: center;
+        }
+        
+        .hours-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hours-section h2 {
+            text-align: center;
+        }
+        
+        .hours-section h2:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .hours-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .hours-item {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .hours-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #1d3557;
+        }
+        
+        .hours-item p {
+            color: #666;
+        }
+        
+        @media (max-width: 768px) {
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+            
+            .contact-section h2 {
+                text-align: center;
+            }
+            
+            .contact-section h2:after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <div class="logo">東西</div>
+            <h1>East Meets West</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="#" class="active">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-nav-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <section class="contact-header">
+        <div>
+            <h2>Contact Us</h2>
+            <p>We'd love to hear from you</p>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2>Get In Touch</h2>
+                
+                <div class="contact-info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h3>Location</h3>
+                        <p>123 Fusion Street<br>Culinary District<br>City, State 12345</p>
+                    </div>
+                </div>
+                
+                <div class="contact-info-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <div>
+                        <h3>Phone</h3>
+                        <p>Reservations: (555) 123-4567<br>General Inquiries: (555) 765-4321</p>
+                    </div>
+                </div>
+                
+                <div class="contact-info-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h3>Email</h3>
+                        <p>reservations@eastmeetswest.com<br>info@eastmeetswest.com</p>
+                    </div>
+                </div>
+                
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-yelp"></i></a>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <h2>Make a Reservation</h2>
+                <form id="reservation-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="guests">Number of Guests</label>
+                            <select id="guests" name="guests" required>
+                                <option value="">Select</option>
+                                <option value="1">1 Person</option>
+                                <option value="2">2 People</option>
+                                <option value="3">3 People</option>
+                                <option value="4">4 People</option>
+                                <option value="5">5 People</option>
+                                <option value="6">6 People</option>
+                                <option value="7+">7+ People</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="date">Date</label>
+                            <input type="date" id="date" name="date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="time">Time</label>
+                            <select id="time" name="time" required>
+                                <option value="">Select</option>
+                                <option value="11:30">11:30 AM</option>
+                                <option value="12:00">12:00 PM</option>
+                                <option value="12:30">12:30 PM</option>
+                                <option value="13:00">1:00 PM</option>
+                                <option value="13:30">1:30 PM</option>
+                                <option value="18:00">6:00 PM</option>
+                                <option value="18:30">6:30 PM</option>
+                                <option value="19:00">7:00 PM</option>
+                                <option value="19:30">7:30 PM</option>
+                                <option value="20:00">8:00 PM</option>
+                                <option value="20:30">8:30 PM</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Special Requests</label>
+                        <textarea id="message" name="message"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Reserve Table</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="map-section">
+        <div class="map-container">
+            <div class="map-placeholder">
+                <p><i class="fas fa-map-marked-alt"></i> Interactive Map Would Be Displayed Here</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="hours-section">
+        <div class="hours-container">
+            <h2>Opening Hours</h2>
+            <div class="hours-grid">
+                <div class="hours-item">
+                    <h3>Monday - Thursday</h3>
+                    <p>Lunch: 11:30 AM - 2:30 PM</p>
+                    <p>Dinner: 5:30 PM - 10:00 PM</p>
+                </div>
+                <div class="hours-item">
+                    <h3>Friday</h3>
+                    <p>Lunch: 11:30 AM - 2:30 PM</p>
+                    <p>Dinner: 5:30 PM - 11:00 PM</p>
+                </div>
+                <div class="hours-item">
+                    <h3>Saturday</h3>
+                    <p>Brunch: 10:30 AM - 3:00 PM</p>
+                    <p>Dinner: 5:30 PM - 11:00 PM</p>
+                </div>
+                <div class="hours-item">
+                    <h3>Sunday</h3>
+                    <p>Brunch: 10:30 AM - 3:00 PM</p>
+                    <p>Dinner: 5:30 PM - 10:00 PM</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>East Meets West</h3>
+                <p>Where culinary traditions blend into extraordinary experiences</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Hours</h3>
+                <p>Monday - Friday: 11:30 AM - 10:00 PM</p>
+                <p>Saturday - Sunday: 10:30 AM - 11:00 PM</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Fusion Street, Culinary District</p>
+                <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+                <p><i class="fas fa-envelope"></i> info@eastmeetswest.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 East Meets West Fusion Restaurant. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Form submission handling
+        document.getElementById('reservation-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your reservation request! We will contact you shortly to confirm your booking.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>

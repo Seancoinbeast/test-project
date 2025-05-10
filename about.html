@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - East Meets West</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* About Page Specific Styles */
+        .about-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/about-header.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 40vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        
+        .about-header h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .about-section {
+            padding: 80px 5%;
+        }
+        
+        .about-section:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .about-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+            padding: 0 20px;
+        }
+        
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            height: 400px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            margin: 20px;
+        }
+        
+        .about-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #1d3557;
+            position: relative;
+        }
+        
+        .about-section h2:after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background-color: #e63946;
+            bottom: -10px;
+            left: 0;
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .chef-section {
+            text-align: center;
+        }
+        
+        .chef-section h2 {
+            text-align: center;
+        }
+        
+        .chef-section h2:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .chefs-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .chef {
+            width: 300px;
+            text-align: center;
+        }
+        
+        .chef-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center;
+            margin: 0 auto 20px;
+            border: 5px solid white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .chef h3 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+            color: #1d3557;
+        }
+        
+        .chef h4 {
+            font-size: 1rem;
+            color: #e63946;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        .chef p {
+            color: #666;
+        }
+        
+        .values-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .value {
+            flex: 1;
+            min-width: 250px;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+        
+        .value i {
+            font-size: 2.5rem;
+            color: #e63946;
+            margin-bottom: 20px;
+        }
+        
+        .value h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #1d3557;
+        }
+        
+        @media (max-width: 768px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .about-image {
+                order: 1;
+                width: 100%;
+                margin: 0 0 30px 0;
+            }
+            
+            .about-text {
+                order: 2;
+            }
+            
+            .about-section h2 {
+                text-align: center;
+            }
+            
+            .about-section h2:after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <div class="logo">東西</div>
+            <h1>East Meets West</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="#" class="active">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-nav-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <section class="about-header">
+        <div>
+            <h2>Our Story</h2>
+            <p>The journey of culinary fusion and cultural harmony</p>
+        </div>
+    </section>
+
+    <section class="about-section">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>Our Journey</h2>
+                <p>East Meets West was born from a passion for both Chinese and Western culinary traditions. Our founders, Chef Li Wei and Chef Michael Anderson, met while studying at the International Culinary Institute and discovered their shared vision of creating a dining experience that bridges cultures through food.</p>
+                <p>Established in 2015, our restaurant has been dedicated to crafting innovative dishes that honor the techniques and flavors of both Eastern and Western cuisines. We believe that food is a universal language that brings people together, and our fusion approach celebrates the best of both worlds.</p>
+                <p>What started as a small experimental kitchen has grown into a beloved culinary destination, where traditional boundaries are crossed and new flavor combinations are discovered daily.</p>
+            </div>
+            <div class="about-image" style="background-image: url('images/restaurant-journey.jpg');"></div>
+        </div>
+    </section>
+
+    <section class="about-section chef-section">
+        <h2>Meet Our Chefs</h2>
+        <div class="chefs-container">
+            <div class="chef">
+                <div class="chef-image" style="background-image: url('images/chef-profiles.jpg'); background-position: left center;"></div>
+                <h3>Li Wei</h3>
+                <h4>Executive Chef & Co-Founder</h4>
+                <p>Born and raised in Sichuan, China, Chef Li brings authentic Chinese culinary techniques and a deep understanding of traditional flavors to our kitchen. With over 15 years of experience in prestigious restaurants across Asia, he masterfully incorporates Western elements while honoring his culinary heritage.</p>
+            </div>
+            <div class="chef">
+                <div class="chef-image" style="background-image: url('images/chef-profiles.jpg'); background-position: center center;"></div>
+                <h3>Michael Anderson</h3>
+                <h4>Executive Chef & Co-Founder</h4>
+                <p>Trained in classical French cuisine, Chef Michael has worked in Michelin-starred restaurants throughout Europe. His passion for Asian flavors led him to explore innovative ways of combining Western cooking techniques with Eastern ingredients, creating unique dishes that surprise and delight.</p>
+            </div>
+            <div class="chef">
+                <div class="chef-image" style="background-image: url('images/chef-profiles.jpg'); background-position: right center;"></div>
+                <h3>Sophia Chen</h3>
+                <h4>Pastry Chef</h4>
+                <p>Specializing in fusion desserts, Chef Sophia expertly blends Asian ingredients like matcha, red bean, and black sesame with European pastry techniques. Her creative approach to sweets provides the perfect finale to the East Meets West dining experience.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section">
+        <div class="about-content">
+            <div class="about-image" style="background-image: url('images/restaurant-philosophy.jpg');"></div>
+            <div class="about-text">
+                <h2>Our Philosophy</h2>
+                <p>At East Meets West, we believe that culinary traditions are meant to be both honored and reimagined. Our approach to fusion cuisine isn't simply about combining ingredients—it's about understanding the cultural significance of each element and creating harmonious dishes that respect their origins while exploring new possibilities.</p>
+                <p>We are committed to sourcing the finest ingredients, with a focus on local and seasonal produce whenever possible. Our relationships with local farmers and suppliers ensure that we bring the freshest flavors to your table while supporting our community.</p>
+                <p>Every dish that leaves our kitchen represents our dedication to culinary excellence, cultural appreciation, and innovative thinking. We invite you to join us on this gastronomic journey where East truly meets West.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>Our Values</h2>
+                <p>The foundation of East Meets West is built on our commitment to these core values that guide everything we do:</p>
+                
+                <div class="values-container">
+                    <div class="value">
+                        <i class="fas fa-seedling"></i>
+                        <h3>Sustainability</h3>
+                        <p>We are committed to environmentally responsible practices, from sourcing ingredients to minimizing waste in our operations.</p>
+                    </div>
+                    <div class="value">
+                        <i class="fas fa-hands-helping"></i>
+                        <h3>Community</h3>
+                        <p>We believe in supporting local producers and engaging with our community through events and partnerships.</p>
+                    </div>
+                    <div class="value">
+                        <i class="fas fa-lightbulb"></i>
+                        <h3>Innovation</h3>
+                        <p>We constantly explore new techniques and flavor combinations while respecting culinary traditions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>East Meets West</h3>
+                <p>Where culinary traditions blend into extraordinary experiences</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Hours</h3>
+                <p>Monday - Friday: 11:30 AM - 10:00 PM</p>
+                <p>Saturday - Sunday: 10:30 AM - 11:00 PM</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Fusion Street, Culinary District</p>
+                <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+                <p><i class="fas fa-envelope"></i> info@eastmeetswest.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 East Meets West Fusion Restaurant. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

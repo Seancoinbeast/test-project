@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - East Meets West</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Menu Page Specific Styles */
+        .menu-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/menu-header.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 40vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        
+        .menu-header h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .menu-nav {
+            background-color: #f1faee;
+            padding: 20px 0;
+            text-align: center;
+        }
+        
+        .menu-nav ul {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .menu-nav li {
+            margin: 0 20px;
+        }
+        
+        .menu-nav a {
+            font-weight: 600;
+            color: #1d3557;
+            padding: 5px 0;
+            position: relative;
+        }
+        
+        .menu-nav a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: #e63946;
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+        
+        .menu-nav a:hover:after,
+        .menu-nav a.active:after {
+            width: 100%;
+        }
+        
+        .menu-section {
+            padding: 60px 5%;
+        }
+        
+        .menu-section:nth-child(odd) {
+            background-color: #f8f9fa;
+        }
+        
+        .menu-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: #1d3557;
+            position: relative;
+        }
+        
+        .menu-section h2:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background-color: #e63946;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .menu-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .menu-item {
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .menu-item-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+            border: 3px solid white;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .menu-item-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+            color: #1d3557;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .menu-item-info .price {
+            color: #e63946;
+            font-weight: 600;
+        }
+        
+        .menu-item-info p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+        
+        .menu-item-info .tags {
+            margin-top: 10px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .menu-item-info .tag {
+            background-color: #e0e0e0;
+            color: #333;
+            font-size: 0.8rem;
+            padding: 3px 10px;
+            border-radius: 20px;
+            margin-right: 8px;
+            margin-bottom: 5px;
+        }
+        
+        .menu-item-info .tag.spicy {
+            background-color: #ffcdd2;
+            color: #c62828;
+        }
+        
+        .menu-item-info .tag.vegetarian {
+            background-color: #c8e6c9;
+            color: #2e7d32;
+        }
+        
+        .menu-item-info .tag.signature {
+            background-color: #bbdefb;
+            color: #1565c0;
+        }
+        
+        @media (max-width: 768px) {
+            .menu-items {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <div class="logo">東西</div>
+            <h1>East Meets West</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#" class="active">Menu</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-nav-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <section class="menu-header">
+        <div>
+            <h2>Our Menu</h2>
+            <p>Discover the perfect harmony of Eastern and Western flavors</p>
+        </div>
+    </section>
+
+    <nav class="menu-nav">
+        <ul>
+            <li><a href="#appetizers" class="active">Appetizers</a></li>
+            <li><a href="#main-courses">Main Courses</a></li>
+            <li><a href="#desserts">Desserts</a></li>
+            <li><a href="#beverages">Beverages</a></li>
+        </ul>
+    </nav>
+
+    <section id="appetizers" class="menu-section">
+        <h2>Appetizers</h2>
+        <div class="menu-items">
+            <div class="menu-item">
+                <div class="menu-item-image" style="background-color: #e63946;"></div>
+                <div class="menu-item-info">
+                    <h3>Crispy Wonton Bruschetta <span class="price">$12</span></h3>
+                    <p>Crispy wonton shells topped with tomato, basil, and Chinese five-spice infused olive oil</p>
+                    <div class="tags">
+                        <span class="tag vegetarian">Vegetarian</span>
+                        <span class="tag signature">Signature</span>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div class="menu-item-image" style="background-color: #e63946;"></div>
+                <div class="menu-item-info">
+                    <h3>Peking Duck Spring Rolls <span class="price">$14</span></h3>
+                    <p>Traditional Peking duck wrapped in crispy spring rolls with hoisin and cranberry sauce</p>
+                    <div class="tags">
+                        <span class="tag signature">Signature</span>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div class="menu-item-image" style="background-color: #e63946;"></div>
+                <div class="menu-item-info">
+                    <h3>Szechuan Shrimp Cocktail <span class="price">$16</span></h3>
+                    <p>Poached shrimp with a spicy Szechuan cocktail sauce and avocado cream</p>
+                    <div class="tags">
+                        <span class="tag spicy">Spicy</span>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div class="menu-item-image" style="background-color: #e63946;"></div>
+                <div class="menu-item-info">
+                    <h3>Truffle Xiaolongbao <span class="price">$15</span></h3>
+                    <p>Traditional soup dumplings infused with Italian black truffle and pork filling</p>
+                    <div class="tags">
+                        <span class="tag signature">Signature</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="main-courses" class="menu-section">
+        <h2>Main Courses</h2>
+        <div class="menu-items">
+            <div class="menu-item">
+                <div class="menu-item-image" style="background-color: #e63946;"></div>
+                <div class="menu-item-info">
+                    <h3>Five-Spice Duck Confit <span class="price">$32</span></h3>
+                    <p>French duck confit with Chinese five-spice, served with orange-ginger sauce and wild rice</p>
+                    <div class="tags">
+                        <span class="tag signature">Signature</span>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div class="menu-item-image" style="background-color: #e63946;"></div>
+                <div class="menu-item-info">
+                    <h3>Sichuan Beef Wellington <span class="price">$38</span></h3>
+                    <p>Beef tenderloin with Sichuan peppercorn duxelles, wrapped in puff pastry</p>
+                    <div class="tags">
+                        <span class="tag spicy">Spicy</span>
+                        <span class="tag signature">Signature</span>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div class="menu-item-image" style="background-color: #e63946;"></div>
+                <div class="menu-item-info">
+                    <h3>Kung Pao Chicken Pasta <span class="price">$26</span></h3>
+                    <p>Fettuccine pasta tossed with spicy kung pao sauce, chicken, and roasted peanuts</p>
+                    <div class="tags">
+                        <span class="tag spicy">Spicy</span>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div class="menu-item-image" style="background-color: #e63946;"></div>
+                <div class="menu-item-info">
+                    <h3>Miso Glazed Salmon <span class="price">$30</span></h3>
+                    <p>Atlantic salmon with miso glaze, served with risotto and bok choy</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div class="menu-item-image" style="background-color: #e63946;"></div>
+                <div class="menu-item-info">
+                    <h3>Mapo Tofu Lasagna <span class="price">$24</span></h3>
+                    <p>Layers of pasta, spicy mapo tofu, and cheese, baked to perfection</p>
+                    <div class="tags">
+                        <span class="tag vegetarian">Vegetarian</span>
+                        <span class="tag spicy">Spicy</span>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div class="menu-item-image" style="background-color: #e63946;"></div>
+                <div class="menu-item-info">
+                    <h3>Peking Duck Pizza <span class="price">$28</span></h3>
+                    <p>Thin crust pizza topped with Peking duck, hoisin sauce, cucumber, and scallions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="desserts" class="menu-section">
+        <h2>Desserts</h2>
+        <div class="menu-items">
+            <div class="menu-item">
+                <div class="menu-item-image" style="background-color: #e63946;"></div>
+                <div class="menu-item-info">
+                    <h3>Green Tea Tiramisu <span class="price">$12</span></h3>
+                    <p>Layers of matcha-soaked ladyfingers and mascarpone cream</p>
+                    <div class="tags">
+                        <span class="tag signature">Signature</span>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div class="menu-item-image" style="background-color: #e63946;"></div>
+                <div class="menu-item-info">
+                    <h3>Red Bean Panna Cotta <span class="price">$10</span></h3>
+                    <p>Creamy vanilla panna cotta topped with sweet red bean paste</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div class="menu-item-image" style="background-color: #e63946;"></div>
+                <div class="menu-item-info">
+                    <h3>Sesame Crème Brûlée <span class="price">$11</span></h3>
+                    <p>Classic crème brûlée infused with black sesame, topped with caramelized sugar</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div class="menu-item-image" style="background-color: #e63946;"></div>
+                <div class="menu-item-info">
+                    <h3>Lychee Rose Sorbet <span class="price">$9</span></h3>
+                    <p>Refreshing lychee sorbet with hints of rose water, served with almond tuile</p>
+                    <div class="tags">
+                        <span class="tag vegetarian">Vegetarian</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="beverages" class="menu-section">
+        <h2>Beverages</h2>
+        <div class="menu-items">
+            <div class="menu-item">
+                <div class="menu-item-image" style="background-color: #e63946;"></div>
+                <div class="menu-item-info">
+                    <h3>Jasmine Tea Mojito <span class="price">$14</span></h3>
+                    <p>Rum, jasmine tea, mint, lime, and soda water</p>
+                    <div class="tags">
+                        <span class="tag signature">Signature</span>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div class="menu-item-image" style="background-color: #e63946;"></div>
+                <div class="menu-item-info">
+                    <h3>Five-Spice Old Fashioned <span class="price">$16</span></h3>
+                    <p>Bourbon infused with Chinese five-spice, bitters, and orange peel</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div class="menu-item-image" style="background-color: #e63946;"></div>
+                <div class="menu-item-info">
+                    <h3>Lychee Martini <span class="price">$15</span></h3>
+                    <p>Vodka, lychee liqueur, and fresh lychee juice</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div class="menu-item-image" style="background-color: #e63946;"></div>
+                <div class="menu-item-info">
+                    <h3>Oolong Iced Tea <span class="price">$6</span></h3>
+                    <p>House-brewed oolong tea with honey and lemon</p>
+                    <div class="tags">
+                        <span class="tag vegetarian">Non-Alcoholic</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>East Meets West</h3>
+                <p>Where culinary traditions blend into extraordinary experiences</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Hours</h3>
+                <p>Monday - Friday: 11:30 AM - 10:00 PM</p>
+                <p>Saturday - Sunday: 10:30 AM - 11:00 PM</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Fusion Street, Culinary District</p>
+                <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+                <p><i class="fas fa-envelope"></i> info@eastmeetswest.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 East Meets West Fusion Restaurant. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
